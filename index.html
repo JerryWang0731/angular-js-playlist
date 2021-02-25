@@ -12,7 +12,9 @@
         <br>
         <span>Jerry Say: {{ greet }}</span>
         <br>
-        <span style="color:{{color[0]}}" >{{ greet }}</span>        
+        <ul>
+          <li ng-repeat="c in color">{{ c }}</li>
+        </ul>
       </div>      
     </div>    
   </body>
