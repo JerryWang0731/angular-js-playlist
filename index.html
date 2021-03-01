@@ -4,19 +4,10 @@
     <title>TheNetNinja Angular Playlist</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="app\lib\angular.min.js"></script>
-    <script src="app\lib\app.js"></script>
+    <script src="app\app.js"></script>
   </head>
   <body>
-    <div ng-app="myApp">
-      <div ng-init="color=['red', 'blue', 'green']">
-        <input type="text" ng-model="greet" placeholder="say something nice">  
-        <br>
-        <span>Jerry Say: {{ greet }}</span>
-        <br>
-        <ul>
-          <li ng-repeat="c in color">{{ c }}</li>
-        </ul>
-      </div>   
+    <div ng-app="myApp">      
       <div ng-controller="MyController">
         {{ greet }}
       </div>    
