@@ -8,7 +8,9 @@
   </head>
   <body>
     <div ng-app="myApp">      
+      <header ng-include="'header.html'"></header>
       <div ng-controller="MyController">
+        <input type="text" ng-model="greet" placeholder="say something nice">  
         {{ greet }}
       </div>    
     </div>    
