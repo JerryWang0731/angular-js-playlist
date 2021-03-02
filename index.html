@@ -18,8 +18,9 @@
           <button ng-click="orderBy = 'belt'">Order By Belt</button>
           
           <ul>
-            <li ng-repeat="ninja in ninjas | orderBy: orderBy | filter: search" ng-show="ninja.available">
+            <li ng-repeat="ninja in ninjas | orderBy: orderBy | filter: search" ng-show="ninja.available">              
               <h3>{{ ninja.name }} - {{ ninja.rate | currency : '$' }}</h3>
+              <img ng-src="{{ ninja.thumb }}" ng-show="ninja.thumb" width="50px">
               <span class="remove" ng-click="removeMember(ninja)" >X</span>
               <span class="belt" style="background-color: {{ ninja.belt }}">{{ ninja.belt }} - belt</span>              
             </li> 

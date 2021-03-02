@@ -14,12 +14,12 @@ myApp.controller('MyController', ['$scope', function($scope){
     };
 
     $scope.ninjas = [
-        { name: 'Aerry', belt: 'red', rate: 10, available: true},
-        { name: 'Jerry', belt: 'blue', rate: 10, available: true},
-        { name: 'Dasu', belt: 'red', rate: 150, available: true},
-        { name: 'Sici', belt: 'green', rate: 250, available: true},
-        { name: 'Mario', belt: 'yellow', rate: 20, available: true},
-        { name: 'Makyo', belt: 'gray', rate: 20, available: false},
+        { thumb: '' ,name: 'Aerry', belt: 'red', rate: 10, available: true},
+        { thumb: '' ,name: 'Jerry', belt: 'blue', rate: 10, available: true},
+        { thumb: './content/img/luich.jpg' ,name: 'luich', belt: 'green', rate: 150, available: true},
+        { thumb: './content/img/yoshi.jpg' ,name: 'yoshi', belt: 'green', rate: 250, available: true},
+        { thumb: './content/img/Mario.jpg' ,name: 'Mario', belt: 'red', rate: 20, available: true},
+        { thumb: '' ,name: 'Makyo', belt: 'gray', rate: 20, available: false},
     ]; 
 
     $scope.addMember = function()
