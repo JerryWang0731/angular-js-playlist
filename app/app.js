@@ -21,5 +21,15 @@ myApp.controller('MyController', ['$scope', function($scope){
         { name: 'Mario', belt: 'yellow', rate: 20, available: true},
         { name: 'Makyo', belt: 'gray', rate: 20, available: false},
     ]; 
+
+    $scope.addMember = function()
+    {
+        $scope.ninjas.push({
+            name: $scope.newMember.name,
+            belt: $scope.newMember.belt,
+            rate: parseInt($scope.newMember.rate),
+            available: true
+        });
+    };
     
 }]);
