@@ -1,4 +1,18 @@
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ngRoute']);
+
+myApp.config(['$routeProvider', function($routeProvider){
+    $routeProvider
+        .when('/home', {
+            templateUrl: 'views/home.html'
+        })
+        .when('/directory', {
+            templateUrl: 'views/directory.html',
+            controller: 'MyController'
+        })
+        .otherwise({
+            redirectTo: '/home'
+        })
+}]);
 
 myApp.controller('MyController', ['$scope', function($scope){
     $scope.search = "";

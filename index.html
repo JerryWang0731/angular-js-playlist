@@ -4,37 +4,13 @@
     <title>TheNetNinja Angular Playlist</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="app\lib\angular.min.js"></script>
+    <script src="app\lib\angular-route.min.js"></script>
     <script src="app\app.js"></script>
   </head>
   <body>
     <div ng-app="myApp">      
       <header ng-include="'header.html'"></header>
-      <div class="content">
-        <div ng-controller="MyController">
-          <input type="text" ng-model="search" placeholder="search key word for member">          
-          
-          <button ng-click="orderBy = 'name'">Order By Name</button>
-          <button ng-click="orderBy = 'rate'">Order By Rate</button>
-          <button ng-click="orderBy = 'belt'">Order By Belt</button>
-          
-          <ul>
-            <li ng-repeat="ninja in ninjas | orderBy: orderBy | filter: search" ng-show="ninja.available">              
-              <h3>{{ ninja.name }} - {{ ninja.rate | currency : '$' }}</h3>
-              <img ng-src="{{ ninja.thumb }}" ng-show="ninja.thumb" width="50px">
-              <span class="remove" ng-click="removeMember(ninja)" >X</span>
-              <span class="belt" style="background-color: {{ ninja.belt }}">{{ ninja.belt }} - belt</span>              
-            </li> 
-          </ul>
-
-          <form ng-submit="addMember()">
-            <input type="text" ng-model="newMember.name" placeholder="name">
-            <input type="text" ng-model="newMember.belt" placeholder="belt">
-            <input type="text" ng-model="newMember.rate" placeholder="rate">
-            <input type="submit" value="Add New Member">
-          </form>
-
-        </div>
-      </div>    
+      <main ng-view></main>
     </div>    
   </body>
 </html>
