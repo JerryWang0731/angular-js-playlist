@@ -13,16 +13,16 @@
         <div ng-controller="MyController">
           <input type="text" ng-model="search" placeholder="search key word for member">          
           
-          <div>
-            <label>Order By:name</label><input type="radio" ng-model="orderBy" value="name">
-            <label>Order By:rate</label><input type="radio" ng-model="orderBy" value="rate">
-            <label>Order By:belt</label><input type="radio" ng-model="orderBy" value="belt">  
-          </div>
+          <button ng-click="orderBy = 'name'">Order By Name</button>
+          <button ng-click="orderBy = 'rate'">Order By Rate</button>
+          <button ng-click="orderBy = 'belt'">Order By Belt</button>
           
           <ul>
             <li ng-repeat="ninja in ninjas | orderBy: orderBy | filter: search" ng-show="ninja.available">
-              {{ ninja.name }} - {{ ninja.belt }} - {{ ninja.rate | currency : '$' }}
-            </li>
+              <h3>{{ ninja.name }} - {{ ninja.rate | currency : '$' }}</h3>
+              <span class="remove" ng-click="removeMember(ninja)" >X</span>
+              <span class="belt" style="background-color: {{ ninja.belt }}">{{ ninja.belt }} - belt</span>              
+            </li> 
           </ul>
         </div>
       </div>    
