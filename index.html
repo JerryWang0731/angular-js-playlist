@@ -9,11 +9,20 @@
   <body>
     <div ng-app="myApp">      
       <header ng-include="'header.html'"></header>
-      <div ng-controller="MyController">
-        <input type="text" ng-model="search" placeholder="search key word for member">  
-        <div class="content">
+      <div class="content">
+        <div ng-controller="MyController">
+          <input type="text" ng-model="search" placeholder="search key word for member">          
+          
+          <div>
+            <label>Order By:name</label><input type="radio" ng-model="orderBy" value="name">
+            <label>Order By:rate</label><input type="radio" ng-model="orderBy" value="rate">
+            <label>Order By:belt</label><input type="radio" ng-model="orderBy" value="belt">  
+          </div>
+          
           <ul>
-            <li ng-show="ninja.available" ng-repeat="ninja in ninjas | filter: search">{{ ninja.name }} - {{ ninja.belt }} - {{ ninja.rate }}</li>
+            <li ng-repeat="ninja in ninjas | orderBy: orderBy | filter: search" ng-show="ninja.available">
+              {{ ninja.name }} - {{ ninja.belt }} - {{ ninja.rate | currency : '$' }}
+            </li>
           </ul>
         </div>
       </div>    
