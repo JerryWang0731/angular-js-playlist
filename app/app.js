@@ -14,10 +14,9 @@ myApp.config(['$routeProvider', function($routeProvider){
         })
 }]);
 
-myApp.controller('MyController', ['$scope', function($scope){
+myApp.controller('MyController', ['$scope', '$http', function($scope, $http){
     $scope.search = "";
     $scope.orderBy = "";
-
 
     $scope.removeMember = function(member){
         const rmMemberIdx = $scope.ninjas.indexOf(member);
@@ -26,15 +25,6 @@ myApp.controller('MyController', ['$scope', function($scope){
             $scope.ninjas.splice(rmMemberIdx, 1);
         }
     };
-
-    $scope.ninjas = [
-        { thumb: '' ,name: 'Aerry', belt: 'red', rate: 10, available: true},
-        { thumb: '' ,name: 'Jerry', belt: 'blue', rate: 10, available: true},
-        { thumb: './content/img/luich.jpg' ,name: 'luich', belt: 'green', rate: 150, available: true},
-        { thumb: './content/img/yoshi.jpg' ,name: 'yoshi', belt: 'green', rate: 250, available: true},
-        { thumb: './content/img/Mario.jpg' ,name: 'Mario', belt: 'red', rate: 20, available: true},
-        { thumb: '' ,name: 'Makyo', belt: 'gray', rate: 20, available: false},
-    ]; 
 
     $scope.addMember = function()
     {
@@ -45,5 +35,12 @@ myApp.controller('MyController', ['$scope', function($scope){
             available: true
         });
     };
+
+    $http.get('data/members.json').success(function(data){
+        $scope.ninjas = data;
+    });
+
+    const temp = angular.toJson($scope.ninjas);
+    console.log(temp);
     
 }]);
