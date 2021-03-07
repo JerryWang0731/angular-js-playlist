@@ -59,5 +59,10 @@ myApp.controller('MyController', ['$scope', '$http', function($scope, $http){
 
     const temp = angular.toJson($scope.ninjas);
     console.log(temp);
+
+
+    $scope.removeAll = function(){
+        $scope.ninjas = [];
+    };
     
 }]);
