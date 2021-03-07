@@ -22,6 +22,8 @@ myApp.directive('randomNinja', [function(){
             ninjas: '=',
             title: '=',
         },
+        transclude: true,
+        replace: true,
         templateUrl: 'views/random.html',
         controller: function($scope){
             $scope.random = Math.floor(Math.random() * 6)
