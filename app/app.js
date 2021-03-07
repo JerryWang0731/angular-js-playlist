@@ -2,6 +2,9 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
 myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
+        .when('/content', {
+            templateUrl: 'views/content.html',
+        })
         .when('/home', {
             templateUrl: 'views/home.html',
             controller: 'MyController'
