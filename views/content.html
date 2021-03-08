@@ -1,9 +1,22 @@
 <div class="content">
-    {{ contact }}
-    <form novalidate>
+    <form name="contactForm" novalidate>
         <input type="text" placeholder="name" name="name" ng-model="contact.name" ng-required="true">
+        <div ng-show="contactForm.name.$invalid && contactForm.name.$touched">
+            <small style="color: red; display: block; text-align: center;">Enter Valid Name</small>
+        </div>
+        <!-- <span>
+            $pristine = {{ contactForm.name.$pristine }}
+            $dirty = {{ contactForm.name.$dirty }}
+            $untouched = {{ contactForm.name.$untouched }}
+            $touched = {{ contactForm.name.$touched }}
+            $invalid = {{ contactForm.name.$invalid }}
+            $valid = {{ contactForm.name.$valid }}
+        </span> -->
         <input type="email" placeholder="email" name="email" ng-model="contact.email" ng-required="true">
+        <div ng-show="contactForm.email.$invalid && contactForm.email.$touched">
+            <small style="color: red; display: block; text-align: center;">Enter Valid email</small>
+        </div>
         <textarea name="message" placeholder="message" ng-model="contact.message" ng-required="true"></textarea>
-        <input type="submit" value="Add New Member">
+        <input type="submit" value="Add New Member" ng-disabled="contactForm.$invalid">
     </form>
 </div>
