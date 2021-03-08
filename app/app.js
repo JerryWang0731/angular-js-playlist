@@ -2,8 +2,8 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
 myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
-        .when('/content', {
-            templateUrl: 'views/content.html',
+        .when('/contact', {
+            templateUrl: 'views/contact.html',
             controller: 'ContactController'
         })
         .when('/contact-success', {
