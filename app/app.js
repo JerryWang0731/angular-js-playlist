@@ -1,6 +1,9 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
-myApp.config(['$routeProvider', function($routeProvider){
+myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+    
+    $locationProvider.html5Mode(true);
+    
     $routeProvider
         .when('/contact', {
             templateUrl: 'views/contact.html',
