@@ -4,6 +4,11 @@ myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
         .when('/content', {
             templateUrl: 'views/content.html',
+            controller: 'ContactController'
+        })
+        .when('/contact-success', {
+            templateUrl: 'views/contact-success.html',
+            controller: 'ContactController'
         })
         .when('/home', {
             templateUrl: 'views/home.html',
@@ -33,6 +38,13 @@ myApp.directive('randomNinja', [function(){
         }
     }; 
 }]);
+
+myApp.controller('ContactController', ['$scope', '$location', function($scope, $location){
+    $scope.sendMessage = function(){
+        $location.path('contact-success');
+    };    
+}]);
+
 
 myApp.controller('MyController', ['$scope', '$http', function($scope, $http){
     $scope.search = "";
