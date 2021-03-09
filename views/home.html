@@ -1,4 +1,11 @@
 <h2 style="text-align: center;" >home page</h2>
+<select
+  ng-options="opt.id as opt.label for opt in rockers"
+  ng-model="selected"
+></select>
+
+{{ selected }}
+
 <random-ninja ninjas="ninjas" title="'Random Ninja'">
     <p>check our random ninja</p>    
 </random-ninja>

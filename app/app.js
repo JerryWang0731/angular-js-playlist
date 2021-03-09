@@ -48,6 +48,30 @@ myApp.controller('ContactController', ['$scope', '$location', function($scope, $
     };    
 }]);
 
+    $scope.selected = '';
+
+    $scope.rockers = [
+      { 
+        id: 1,
+        label: 'aLabel',
+        subItem: { name: 'aSubItem' },
+      },
+      {
+        id: 2,
+        label: 'bLabel2',
+        subItem: { name: 'bSubItem2' },
+      },
+      {
+        id: 3,
+        label: 'bLabel3',
+        subItem: { name: 'bSubItem3' },
+      },
+      {
+        id: 4,
+        label: 'bLabel4',
+        subItem: { name: 'bSubItem4' },
+      },
+    ];
 
 myApp.controller('MyController', ['$scope', '$http', function($scope, $http){
     $scope.search = "";
