@@ -45,11 +45,14 @@ myApp.directive('randomNinja', [function(){
 myApp.controller('ContactController', ['$scope', '$location', function($scope, $location){
     $scope.sendMessage = function(){
         $location.path('contact-success');
-    };    
+    };  
 }]);
 
-    $scope.selected = '';
+    
 
+myApp.controller('MyController', ['$scope', '$http', function($scope, $http){
+    
+    $scope.selected = '';
     $scope.rockers = [
       { 
         id: 1,
@@ -72,8 +75,7 @@ myApp.controller('ContactController', ['$scope', '$location', function($scope, $
         subItem: { name: 'bSubItem4' },
       },
     ];
-
-myApp.controller('MyController', ['$scope', '$http', function($scope, $http){
+    
     $scope.search = "";
     $scope.orderBy = "";
 
