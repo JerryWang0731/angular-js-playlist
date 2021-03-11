@@ -1,8 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate']);
 
-myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
-    
-    $locationProvider.html5Mode(true);
+myApp.config(['$routeProvider', function($routeProvider){
     
     $routeProvider
         .when('/contact', {
@@ -22,7 +20,7 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
             controller: 'MyController'
         })
         .otherwise({
-            redirectTo: '/home'
+            redirectTo:'/home'
         })
 }]);
 
