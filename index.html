@@ -11,8 +11,22 @@
   <body>
     <div ng-app="myApp">      
       <header ng-include="'header.html'"></header>
+
+      <div ng-controller="CurrentTimeController">
+        Date format: <input ng-model="format"> <hr/>
+        Current time is: <span my-current-time="format" my-other-msg="hardcodemsg"></span>
+      </div>
+
       <main ng-view></main>
     </div>    
+    <script>
+      window.onload = function() {
+          window.addEventListener('message', function (e) {
+              alert(e.origin);
+              alert(e.data);   
+          });
+      }
+    </script>
   </body>
 </html>
 

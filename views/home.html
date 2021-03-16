@@ -3,9 +3,13 @@
   ng-options="opt.id as opt.label for opt in rockers"
   ng-model="selected"
 ></select>
-
 {{ selected }}
+{{ duplicate }}
+{{ AdminName }}
 
 <random-ninja ninjas="ninjas" title="'Random Ninja'">
     <p>check our random ninja</p>    
 </random-ninja>
+
+
+<button ng-click="poMessage()">postMessage</button>
